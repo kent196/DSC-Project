@@ -21,9 +21,10 @@ public class EnemyController : MonoBehaviour
         UpdateEnemyState();
     }
 
-    void UpdateEnemyState()
+    private void UpdateEnemyState()
     {
-
+        EnemyState state = EnemyState.idle;
+        anim.SetInteger("state", (int)state);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
