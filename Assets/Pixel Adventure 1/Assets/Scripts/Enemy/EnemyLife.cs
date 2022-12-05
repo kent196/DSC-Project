@@ -9,17 +9,20 @@ public class EnemyLife : MonoBehaviour
 
 
     public EnemyHealth enemyHealth;
+    public DeathByFalling enemyDeath;
 
 
 
     private void OnEnable()
     {
         EnemyHealth.OnEnemyDeath += Die;
+        DeathByFalling.OnEnemyDeath += Die;
     }
 
 
     private void OnDisable()
     {
+        DeathByFalling.OnEnemyDeath -= Die;
         EnemyHealth.OnEnemyDeath -= Die;
     }
     // Start is called before the first frame update
